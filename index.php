@@ -148,6 +148,7 @@ function myFunctionPop() {
 			<div class="popup" onclick="myFunctionPop()">
 				内容介绍 <span id="myPopup" class="popuptext">《神秘海域》是集解谜、寻宝、探险、射击于一身的冒险动作游戏系列。PS3\PS4系列由SCE旗下Naughty Dog（顽皮狗）工作室制作，PSV版则由Bend Studio制作，为外传性质作品。第一部作品于2007年发售。游戏设定在原始丛林、热带雨林、沙漠腹地、雪山高原、古代遗迹等地，以电影方式呈现。主人公Nathan Drake（内森·德雷克）要面对各种各样的敌人，最终找到宝藏。该系列游戏同时拥有小说和电影等衍生作品，小说由Christopher Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。<div><img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" /></div></span>
 			</div>
+			<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" />
 			<!--close more--></div>
 		<!--close ourwork-->
 		<div class="testimonials" style="height: 290px">
