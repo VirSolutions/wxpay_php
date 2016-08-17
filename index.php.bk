@@ -1,0 +1,157 @@
+<?php
+ini_set('date.timezone','Asia/Shanghai');
+//error_reporting(E_ERROR);
+
+require_once "../lib/WxPay.Api.php";
+require_once "../example/WxPay.NativePay.php";
+require_once '../example/log.php';
+
+//模式一
+/**
+ * 流程：
+ * 1、组装包含支付信息的url，生成二维码
+ * 2、用户扫描二维码，进行支付
+ * 3、确定支付之后，微信服务器会回调预先配置的回调地址，在【微信开放平台-微信支付-支付配置】中进行配置
+ * 4、在接到回调通知之后，用户进行统一下单支付，并返回支付信息以完成支付（见：native_notify.php）
+ * 5、支付完成之后，微信服务器会通知支付成功
+ * 6、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
+ */
+$notify = new NativePay();
+$url1 = $notify->GetPrePayUrl("123456789");
+$url2 = $notify->GetPrePayUrl("123456700");
+
+//模式二
+/**
+ * 流程：
+ * 1、调用统一下单，取得code_url，生成二维码
+ * 2、用户扫描二维码，进行支付
+ * 3、支付完成之后，微信服务器会通知支付成功
+ * 4、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
+ */
+$inputPid001 = new WxPayUnifiedOrder();
+$inputPid001 ->SetBody("test");
+$inputPid001 ->SetAttach("test");
+$inputPid001 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
+$inputPid001 ->SetTotal_fee("3000");
+$inputPid001 ->SetTime_start(date("YmdHis"));
+$inputPid001 ->SetTime_expire(date("YmdHis", time() + 600));
+$inputPid001 ->SetGoods_tag("test");
+$inputPid001 ->SetNotify_url("http://200.200.200.212/example/notify.php");
+$inputPid001 ->SetTrade_type("NATIVE");
+$inputPid001 ->SetProduct_id("123456781");
+$resultPid001 = $notify->GetPayUrl($inputPid001);
+$urlPid001 = $resultPid001 ["code_url"];
+
+$inputPid002 = new WxPayUnifiedOrder();
+$inputPid002 ->SetBody("test");
+$inputPid002 ->SetAttach("test");
+$inputPid002 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
+$inputPid002 ->SetTotal_fee("5000");
+$inputPid002 ->SetTime_start(date("YmdHis"));
+$inputPid002 ->SetTime_expire(date("YmdHis", time() + 600));
+$inputPid002 ->SetGoods_tag("test");
+$inputPid002 ->SetNotify_url("http://200.200.200.212/example/notify.php");
+$inputPid002 ->SetTrade_type("NATIVE");
+$inputPid002 ->SetProduct_id("123456782");
+$resultPid002 = $notify->GetPayUrl($inputPid002);
+$urlPid002 = $resultPid002 ["code_url"];
+
+
+$inputPid003 = new WxPayUnifiedOrder();
+$inputPid003 ->SetBody("test");
+$inputPid003 ->SetAttach("test");
+$inputPid003 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
+$inputPid003 ->SetTotal_fee("8000");
+$inputPid003 ->SetTime_start(date("YmdHis"));
+$inputPid003 ->SetTime_expire(date("YmdHis", time() + 600));
+$inputPid003 ->SetGoods_tag("test");
+$inputPid003 ->SetNotify_url("http://200.200.200.212/example/notify.php");
+$inputPid003 ->SetTrade_type("NATIVE");
+$inputPid003 ->SetProduct_id("123456783");
+$resultPid003 = $notify->GetPayUrl($inputPid003);
+$urlPid003 = $resultPid003 ["code_url"];
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>ARaynorDesign Template</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>欢迎来到虚实梦境&nbsp;</h1>
+	    </div><!--close welcome-->
+	    <div id="menubar">
+          <ul id="menu">
+            <li><a href="http://weibo.com/dawanjiaclc">合作商主页 - 大玩家</a></li>
+          </ul>
+        </div><!--close menubar-->	  
+	  </div><!--close banner-->	
+    </div><!--close header-->	
+    
+	<div id="site_content">		
+
+      <div class="slideshow">  
+		<ul class="slideshow">
+          <li class="show"><img width="900" height="250" src="images/home_1.jpg" alt="&quot;Enter your caption here&quot;" /></li>
+          <li><img width="900" height="250" src="images/home_2.jpg" alt="&quot;Enter your caption here&quot;" /></li>
+        </ul> 
+      </div><!--close slideshow-->		
+	  
+	  <div class="ourwork" style="height: 266px">
+	    <h3>VR 火力全开</h3>
+		<p>微信二维码支付<br/>单次游戏:30RMB<br/>双人游戏:50RMB</p>
+		  <p><img alt="" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" style="width:150px;height:150px;"/></p>
+		  <!--close more-->      
+	  </div><!--close ourwork-->
+	  <div class="testimonials" style="height: 266px">
+	    <h3>VR 疯狂水果</h3>
+		<p>微信二维码支付<br/>单次游戏:30RMB<br/>双人游戏:50RMB</p>
+		  <p><img alt="" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid002);?>" style="width:150px;height:150px;"/></p>
+		  <!--close more-->        
+	  </div><!--close testimonials-->	  
+	  <div class="projects" style="height: 266px">
+	    <h3>VR 最高危机</h3>
+		<p>微信二维码支付<br/>单次游戏:30RMB<br/>双人游戏:50RMB</p>
+		  <p><img alt="" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid003);?>" style="width:150px;height:150px;"/></p>	  
+		  <!--close more-->        
+	  </div><!--close projects-->		 
+	 
+	  <div id="content">
+        <div class="content_item">
+		  <h1>合作伙伴</h1>
+          <p>&nbsp;<form method="post">
+			  <input name="Image_partner001" type="image" height="122" src="images/GSTX_logo_s.png" width="100" />&nbsp;&nbsp;&nbsp;&nbsp;
+				<input height="104" name="Image_partner002" src="images/wx_pay_logo_s.png" type="image" width="100" /></form>
+			</p>   				  
+		</div><!--close content_item-->
+      </div><!--close content-->   
+	
+	</div><!--close site_content--> 
+    
+	  <!--close content_grey-->   
+ 
+  </div><!--close main-->
+  
+  <div id="footer_container">
+    <div id="footer">
+	    ALL RIGHTS RECEIVED BY VRDREAMS.COM.CN
+    </div><!--close footer-->  
+  </div><!--close footer_container-->  
+  
+</body>
+</html>
+
