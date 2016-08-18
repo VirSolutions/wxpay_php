@@ -84,9 +84,9 @@ $urlPid003 = $resultPid003 ["code_url"];
 <meta content="enter your keywords here" name="keywords" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <meta content="IE=9" http-equiv="X-UA-Compatible" />
-<link href="http://200.200.200.212/php/dwj/css/style.css" rel="stylesheet" type="text/css" />
-<script src="http://200.200.200.212/php/dwj/js/jquery.min.js" type="text/javascript"></script>
-<script src="http://200.200.200.212/php/dwj/js/image_slide.js" type="text/javascript"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/image_slide.js" type="text/javascript"></script>
 </head>
 
 <!--the CSS for the description popup-->
