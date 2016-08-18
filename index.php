@@ -29,10 +29,10 @@ $url2 = $notify->GetPrePayUrl("123456700");
  * 4、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
  */
 $inputPid001 = new WxPayUnifiedOrder();
-$inputPid001 ->SetBody("test");
-$inputPid001 ->SetAttach("test");
+$inputPid001 ->SetBody("VDR Test");
+$inputPid001 ->SetAttach("Products001");
 $inputPid001 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
-$inputPid001 ->SetTotal_fee("3000");
+$inputPid001 ->SetTotal_fee("1");
 $inputPid001 ->SetTime_start(date("YmdHis"));
 $inputPid001 ->SetTime_expire(date("YmdHis", time() + 600));
 $inputPid001 ->SetGoods_tag("test");
@@ -41,6 +41,37 @@ $inputPid001 ->SetTrade_type("NATIVE");
 $inputPid001 ->SetProduct_id("123456781");
 $resultPid001 = $notify->GetPayUrl($inputPid001);
 $urlPid001 = $resultPid001 ["code_url"];
+
+
+$inputPid002 = new WxPayUnifiedOrder();
+$inputPid002 ->SetBody("VDR Test");
+$inputPid002 ->SetAttach("Products002");
+$inputPid002 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
+$inputPid002 ->SetTotal_fee("2");
+$inputPid002 ->SetTime_start(date("YmdHis"));
+$inputPid002 ->SetTime_expire(date("YmdHis", time() + 600));
+$inputPid002 ->SetGoods_tag("test");
+$inputPid002 ->SetNotify_url("http://200.200.200.212/example/notify.php");
+$inputPid002 ->SetTrade_type("NATIVE");
+$inputPid002 ->SetProduct_id("123456782");
+$resultPid002 = $notify->GetPayUrl($inputPid002);
+$urlPid002 = $resultPid002 ["code_url"];
+
+
+$inputPid003 = new WxPayUnifiedOrder();
+$inputPid003 ->SetBody("VDR Test");
+$inputPid003 ->SetAttach("Products003");
+$inputPid003 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
+$inputPid003 ->SetTotal_fee("3");
+$inputPid003 ->SetTime_start(date("YmdHis"));
+$inputPid003 ->SetTime_expire(date("YmdHis", time() + 600));
+$inputPid003 ->SetGoods_tag("test");
+$inputPid003 ->SetNotify_url("http://200.200.200.212/example/notify.php");
+$inputPid003 ->SetTrade_type("NATIVE");
+$inputPid003 ->SetProduct_id("123456783");
+$resultPid003 = $notify->GetPayUrl($inputPid003);
+$urlPid003 = $resultPid003 ["code_url"];
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -148,7 +179,6 @@ function myFunctionPop() {
 			<div class="popup" onclick="myFunctionPop()">
 				内容介绍 <span id="myPopup" class="popuptext">《神秘海域》是集解谜、寻宝、探险、射击于一身的冒险动作游戏系列。PS3\PS4系列由SCE旗下Naughty Dog（顽皮狗）工作室制作，PSV版则由Bend Studio制作，为外传性质作品。第一部作品于2007年发售。游戏设定在原始丛林、热带雨林、沙漠腹地、雪山高原、古代遗迹等地，以电影方式呈现。主人公Nathan Drake（内森·德雷克）要面对各种各样的敌人，最终找到宝藏。该系列游戏同时拥有小说和电影等衍生作品，小说由Christopher Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。<div><img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" /></div></span>
 			</div>
-			<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" />
 			<!--close more--></div>
 		<!--close ourwork-->
 		<div class="testimonials" style="height: 290px">
@@ -157,7 +187,7 @@ function myFunctionPop() {
 			单次游戏:30RMB<br />
 			双人游戏:50RMB</p>
 			<div class="popup" onclick="myFunctionPop()">
-				内容介绍 <span id="myPopup" class="popuptext">《神秘海域》是集解谜、寻宝、探险、射击于一身的冒险动作游戏系列。PS3\PS4系列由SCE旗下Naughty Dog（顽皮狗）工作室制作，PSV版则由Bend Studio制作，为外传性质作品。第一部作品于2007年发售。游戏设定在原始丛林、热带雨林、沙漠腹地、雪山高原、古代遗迹等地，以电影方式呈现。主人公Nathan Drake（内森·德雷克）要面对各种各样的敌人，最终找到宝藏。该系列游戏同时拥有小说和电影等衍生作品，小说由Christopher Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" /></span>
+				内容介绍 <span id="myPopup" class="popuptext">《神秘海域》是集解谜、寻宝、探险、射击于一身的冒险动作游戏系列。PS3\PS4系列由SCE旗下Naughty Dog（顽皮狗）工作室制作，PSV版则由Bend Studio制作，为外传性质作品。第一部作品于2007年发售。游戏设定在原始丛林、热带雨林、沙漠腹地、雪山高原、古代遗迹等地，以电影方式呈现。主人公Nathan Drake（内森·德雷克）要面对各种各样的敌人，最终找到宝藏。该系列游戏同时拥有小说和电影等衍生作品，小说由Christopher Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid002);?>" /></span>
 			</div>
 
 			<!--close more--></div>
@@ -168,7 +198,7 @@ function myFunctionPop() {
 			单次游戏:30RMB<br />
 			双人游戏:50RMB</p>
 			<div class="popup" onclick="myFunctionPop()">
-				内容介绍 <span id="myPopup" class="popuptext">《神秘海域》是集解谜、寻宝、探险、射击于一身的冒险动作游戏系列。PS3\PS4系列由SCE旗下Naughty Dog（顽皮狗）工作室制作，PSV版则由Bend Studio制作，为外传性质作品。第一部作品于2007年发售。游戏设定在原始丛林、热带雨林、沙漠腹地、雪山高原、古代遗迹等地，以电影方式呈现。主人公Nathan Drake（内森·德雷克）要面对各种各样的敌人，最终找到宝藏。该系列游戏同时拥有小说和电影等衍生作品，小说由Christopher Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" /></span>
+				内容介绍 <span id="myPopup" class="popuptext">《神秘海域》是集解谜、寻宝、探险、射击于一身的冒险动作游戏系列。PS3\PS4系列由SCE旗下Naughty Dog（顽皮狗）工作室制作，PSV版则由Bend Studio制作，为外传性质作品。第一部作品于2007年发售。游戏设定在原始丛林、热带雨林、沙漠腹地、雪山高原、古代遗迹等地，以电影方式呈现。主人公Nathan Drake（内森·德雷克）要面对各种各样的敌人，最终找到宝藏。该系列游戏同时拥有小说和电影等衍生作品，小说由Christopher Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid003);?>" /></span>
 			</div>
 
 			<!--close more--></div>
