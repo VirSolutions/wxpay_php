@@ -17,8 +17,8 @@ require_once "/home/www/php/wxengine/logic/log.php";
  * 6、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
  */
 $notify = new NativePay();
-$url1 = $notify->GetPrePayUrl("123456789");
-$url2 = $notify->GetPrePayUrl("123456700");
+//$url1 = $notify->GetPrePayUrl("123456789");
+//$url2 = $notify->GetPrePayUrl("123456700");
 
 //模式二
 /**
@@ -109,9 +109,9 @@ if (empty($urlPid003)){
 <meta content="enter your keywords here" name="keywords" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <meta content="IE=9" http-equiv="X-UA-Compatible" />
-<link href="http://200.200.200.212/php/dwj/css/style.css" rel="stylesheet" type="text/css" />
-<script src="http://200.200.200.212/php/dwj/js/jquery.min.js" type="text/javascript"></script>
-<script src="http://200.200.200.212/php/dwj/js/image_slide.js" type="text/javascript"></script>
+<link href="http://200.200.200.216/php/vendor/dwj/css/style.css" rel="stylesheet" type="text/css" />
+<script src="http://200.200.200.216/php/vendor/dwj/js/jquery.min.js" type="text/javascript"></script>
+<script src="http://200.200.200.216/php/vendor/dwj/js/image_slide.js" type="text/javascript"></script>
 </head>
 
 <!--the CSS for the description popup-->
@@ -190,9 +190,9 @@ function myFunctionPop() {
 		<div class="slideshow">
 			<ul class="slideshow">
 				<li class="show">
-				<img alt="&quot;VRDreams.com.cn&quot;" height="250" src="http://200.200.200.212/php/dwj/images/home_1.jpg" width="900" /></li>
+				<img alt="&quot;VRDreams.com.cn&quot;" height="250" src="http://200.200.200.216/php/vendor/dwj/images/home_1.jpg" width="900" /></li>
 				<li>
-				<img alt="" height="250" src="http://200.200.200.212/php/dwj/images/home_2.jpg" width="900" /></li>
+				<img alt="" height="250" src="http://200.200.200.216/php/vendor/dwj/images/home_2.jpg" width="900" /></li>
 			</ul>
 		</div>
 		<!--close slideshow-->
@@ -208,7 +208,7 @@ function myFunctionPop() {
 				Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。
 				</span></div>
 			<p>
-			<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid001);?>" /></p>
+			<img alt="Photo landscape" src="http://200.200.200.216/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid001);?>" /></p>
 			<!--close more--></div>
 		<!--close ourwork-->
 		<div class="testimonials" style="height: 290px">
@@ -223,7 +223,7 @@ function myFunctionPop() {
 				Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。</span>
 			</div>
 			<p>
-			<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid002);?>" /></p>
+			<img alt="Photo landscape" src="http://200.200.200.216/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid002);?>" /></p>
 			<!--close more--></div>
 		<!--close testimonials-->
 		<div class="projects" style="height: 290px">
@@ -238,7 +238,7 @@ function myFunctionPop() {
 				Golden执笔，2011年10月4日推出。电影版从2008年开始筹备，但进度缓慢，预计于2015年初开始拍摄，2016年上映。</span>
 			</div>
 			<p>
-			<img alt="Photo landscape" src="http://200.200.200.212/example/qrcode.php?data=<?php echo urlencode($urlPid003);?>" /></p>
+			<img alt="Photo landscape" src="http://200.200.200.216/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid003);?>" /></p>
 			<!--close more--></div>
 		<!--close projects-->
 		<div id="content">
@@ -246,8 +246,8 @@ function myFunctionPop() {
 				<h1>合作伙伴</h1>
 				<p>&nbsp;</p>
 				<form method="post">
-					<input height="122" name="Image_partner001" src="http://200.200.200.212/php/dwj/images/GSTX_logo_s.png" type="image" width="100" />&nbsp;&nbsp;&nbsp;&nbsp;
-					<input height="104" name="Image_partner002" src="http://200.200.200.212/php/dwj/images/wx_pay_logo_s.png" type="image" width="100" /></form>
+					<input height="122" name="Image_partner001" src="http://200.200.200.216/php/vendor/dwj/images/GSTX_logo_s.png" type="image" width="100" />&nbsp;&nbsp;&nbsp;&nbsp;
+					<input height="104" name="Image_partner002" src="http://200.200.200.216/php/vendor/dwj/images/wx_pay_logo_s.png" type="image" width="100" /></form>
 				<p></p>
 			</div>
 			<!--close content_item--></div>
