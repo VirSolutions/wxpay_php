@@ -81,16 +81,16 @@ sleep(1);
 
 /**$inputPid004 = new WxPayUnifiedOrder();*/
 $inputPid004 = &$WxPayUnifiedOrder;
-$inputPid004 ->SetBody("大玩家金牛万达店_全面开火_双人");
+$inputPid004 ->SetBody("大玩家金牛万达店_全面开火_动感背心");
 $inputPid004 ->SetAttach("大玩家金牛万达店");
 $inputPid004 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
-$inputPid004 ->SetTotal_fee("6000");
+$inputPid004 ->SetTotal_fee("1000");
 $inputPid004 ->SetTime_start(date("YmdHis"));
 $inputPid004 ->SetTime_expire(date("YmdHis", time() + 3600));
-$inputPid004 ->SetGoods_tag("全面开火");
+$inputPid004 ->SetGoods_tag("全面开火_动感背心");
 $inputPid004 ->SetNotify_url("http://60.205.127.180/wxengine/logic/notify.php");
 $inputPid004 ->SetTrade_type("NATIVE");
-$inputPid004 ->SetProduct_id("Fruit_DWJ_JNWD_D");
+$inputPid004 ->SetProduct_id("Fire_DWJ_JNWD_Vest");
 $resultPid004 = $notify->GetPayUrl($inputPid004);
 $urlPid004 = $resultPid004 ["code_url"];
 
@@ -208,7 +208,7 @@ function fruitFunctionPop() {
 			<div id="menubar">
 				<ul id="menu">
 					<li><a href="http://weibo.com/dawanjiaclc">合作商主页 - 大玩家金牛万达店</a></li>
-					<li><a href="http://60.205.127.180/vendor/dwj/promotion.php">活动通道</a></li>
+					<li><a href="http://60.205.127.180/vendor/dwj/promotion.php" target="_blank">活动通道</a></li>
 				</ul>
 			</div>
 			<!--close menubar--></div>
@@ -236,7 +236,7 @@ function fruitFunctionPop() {
 			</form>
 			<p></p>
 			<div class="popup" onclick="fireFunctionPop()" style="height: 16px">
-				<h3>双次游戏: 60人民币 - 请点击这里</h3>
+				<h3>游戏装备 动感背心: 10人民币 - 请点击这里</h3>
 				<span id="Popup_fire" class="popuptext">
 				<img alt="Photo landscape" src="http://60.205.127.180/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid004);?>" />
 				</span></div>
