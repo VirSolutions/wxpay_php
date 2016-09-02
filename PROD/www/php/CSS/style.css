@@ -1,4 +1,4 @@
-html
+﻿html
 { height: 100%;}
 
 *
@@ -162,15 +162,14 @@ ul#menu li:hover a
   margin-bottom: 20px;}
 
 .ourwork
-{ width: 388px;
+{ width: 800px;
   float: left;
   padding: 20px;
   background: #098EFF;
   color: #FFF;}
   
 .testimonials
-{ width: 388px;
-  margin-left: 26px;  
+{ width: 800px;
   float: left;
   padding: 20px;
   background: #098EFF;
@@ -339,7 +338,7 @@ ul#menu li:hover a
   background: #FFF; 
   color: #47433F;}
   
-.form_settings input[type="checkbox"]
+.form_settings input[type=checkbox]
 { padding: 2px 0; 
   width: 15px; 
   font: 100% arial; 
