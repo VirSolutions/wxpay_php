@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/> 
-    <title>大玩家 - 微信支付 - 测试页面</title>
+    <title>大玩家 - 微信支付 - Prod页面</title>
     <style type="text/css">
         ul {
             margin-left:10px;
@@ -55,11 +55,11 @@
 <body>
 	<div align="center">
         <ul>
-            <li style="background-color:#8B6914"><a href="http://200.200.200.216/wxengine/logic/native.php">微信二维码支付</a></li>
-              <li style="background-color:#CDCD00"><a href="http://200.200.200.216/wxengine/logic/orderquery.php">订单查询</a></li>
-            <li style="background-color:#CD3278"><a href="http://200.200.200.216/wxengine/logic/refund.php">订单退款</a></li>
-            <li style="background-color:#848484"><a href="http://200.200.200.216/wxengine/logic/refundquery.php">退款查询</a></li>
-            <li style="background-color:#8EE5EE"><a href="http://200.200.200.216/wxengine/logic/download.php">下载订单</a></li>
+            <li style="background-color:#8B6914"><a href="http://60.205.127.180/wxengine/logic/native.php">微信二维码支付</a></li>
+              <li style="background-color:#CDCD00"><a href="http://60.205.127.180/wxengine/logic/orderquery.php">订单查询</a></li>
+            <li style="background-color:#CD3278"><a href="http://60.205.127.180/wxengine/logic/refund.php">订单退款</a></li>
+            <li style="background-color:#848484"><a href="http://60.205.127.180/wxengine/logic/refundquery.php">退款查询</a></li>
+            <li style="background-color:#8EE5EE"><a href="http://60.205.127.180/wxengine/logic/download.php">下载订单</a></li>
         </ul>
 	</div>
 </body>
