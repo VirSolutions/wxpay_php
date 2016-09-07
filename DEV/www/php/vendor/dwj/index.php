@@ -209,6 +209,7 @@ function fruitFunctionPop() {
 				<ul id="menu">
 					<li><a href="http://weibo.com/dawanjiaclc">合作商主页 - 大玩家金牛万达店</a></li>
 					<li><a href="http://60.205.127.180/vendor/dwj/promotion.php" target="_blank">活动通道</a></li>
+					<li><a href="http://60.205.127.180/vendor/dwj/custompay.php" target="_blank">套餐通道</a></li>
 				</ul>
 			</div>
 			<!--close menubar--></div>
