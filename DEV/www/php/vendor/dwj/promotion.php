@@ -27,8 +27,8 @@ $urlPid001P = $resultPid001P ["code_url"];
 
 
 // Define your username and password
-$username = "dwj";
-$password = "1024";
+$username = "dwjcdjn";
+$password = "0282001";
 
 if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) {
 
@@ -41,21 +41,37 @@ if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) {
 <meta content="3600" http-equiv="refresh" />
 <meta content="IE=9" http-equiv="X-UA-Compatible" />
 <title>VRDreams - Promotion</title>
-<link href="http://60.205.127.180/php/vendor/dwj/css/style.css" rel="stylesheet" type="text/css" />
+<link href="http://60.205.127.180/php/vendor/dwj/css/styled.css" rel="stylesheet" type="text/css" />
+
+<style>
+body{TEXT-ALIGN: center;}
+#center{ MARGIN-RIGHT: auto;
+MARGIN-LEFT: auto;
+height:200px;
+background:#F00;
+width:400px;
+vertical-align:middle;
+line-height:200px;
+}
+</style>
+
 </head>
 
 <body>
 
-<h3>请工作人员验证登录</h3>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form">
+<h1>请工作人员验证登录 - 大玩家金牛万达店</h1>
+<form style="width: 500px; TEXT-ALIGN: center; MARGIN-RIGHT: auto; MARGIN-LEFT: auto; background:#098EFF" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form">
+<fieldset>
+
 	<label for="txtUsername">
-	<h6>员工工号</h6>
+	员工工号:
 	</label><input name="txtUsername" title="Enter your Username" type="text" />
-	<label for="txtpassword">
-	<h6>密码</h6>
+	<label for="txtpassword"><br /><br />
+	密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</label>
 	<input name="txtPassword" title="Enter your password" type="password" />
-	<p><input name="Submit" type="submit" value="Login" /></p>
+	<p><input name="Submit" type="submit" value="认证登录" /></p>
+</fieldset>
 </form>
 <?php
 
@@ -64,6 +80,8 @@ else {
 
 ?>
 <link href="http://60.205.127.180/php/vendor/dwj/css/style.css" rel="stylesheet" type="text/css" />
+
+
 <div id="main">
 	<div id="header">
 		<div id="banner">
