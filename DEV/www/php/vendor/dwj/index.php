@@ -60,41 +60,6 @@ $inputPid002 ->SetProduct_id("Fire_DWJ_JNWD_S");
 $resultPid002 = $notify->GetPayUrl($inputPid002);
 $urlPid002 = $resultPid002 ["code_url"];
 
-sleep(1);
-
-/**$inputPid003 = new WxPayUnifiedOrder();*/
-$inputPid003 = &$WxPayUnifiedOrder;
-$inputPid003 ->SetBody("大玩家金牛万达店_水果先锋_双人");
-$inputPid003 ->SetAttach("大玩家金牛万达店");
-$inputPid003 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
-$inputPid003 ->SetTotal_fee("2000");
-$inputPid003 ->SetTime_start(date("YmdHis"));
-$inputPid003 ->SetTime_expire(date("YmdHis", time() + 3600));
-$inputPid003 ->SetGoods_tag("水果先锋");
-$inputPid003 ->SetNotify_url("http://60.205.127.180/wxengine/logic/notify.php");
-$inputPid003 ->SetTrade_type("NATIVE");
-$inputPid003 ->SetProduct_id("Fruit_DWJ_JNWD_D");
-$resultPid003 = $notify->GetPayUrl($inputPid003);
-$urlPid003 = $resultPid003 ["code_url"];
-
-sleep(1);
-
-/**$inputPid004 = new WxPayUnifiedOrder();*/
-$inputPid004 = &$WxPayUnifiedOrder;
-$inputPid004 ->SetBody("大玩家金牛万达店_全面开火_动感背心");
-$inputPid004 ->SetAttach("大玩家金牛万达店");
-$inputPid004 ->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
-$inputPid004 ->SetTotal_fee("1000");
-$inputPid004 ->SetTime_start(date("YmdHis"));
-$inputPid004 ->SetTime_expire(date("YmdHis", time() + 3600));
-$inputPid004 ->SetGoods_tag("全面开火_动感背心");
-$inputPid004 ->SetNotify_url("http://60.205.127.180/wxengine/logic/notify.php");
-$inputPid004 ->SetTrade_type("NATIVE");
-$inputPid004 ->SetProduct_id("Fire_DWJ_JNWD_Vest");
-$resultPid004 = $notify->GetPayUrl($inputPid004);
-$urlPid004 = $resultPid004 ["code_url"];
-
-			
 if (empty($urlPid001)){
 	echo "PID001 not set";
 } else {
@@ -105,18 +70,6 @@ if (empty($urlPid002)){
 	echo "PID002 not set";
 } else {
 		echo "PID002 URL: " .$urlPid002;
-}
- 
-if (empty($urlPid003)){
-	echo "PID003 not set";
-} else {
-		echo "PID003 URL: " .$urlPid003;
-}
-
-if (empty($urlPid004)){
-	echo "PID004 not set";
-} else {
-		echo "PID004 URL: " .$urlPid004;
 }
 
 
@@ -208,6 +161,7 @@ function fruitFunctionPop() {
 			<div id="menubar">
 				<ul id="menu">
 					<li><a href="http://weibo.com/dawanjiaclc">合作商主页 - 大玩家金牛万达店</a></li>
+					<li><a href="http://60.205.127.180/vendor/dwj/custompay.php" target="_blank">套餐支付</a></li>
 					<li><a href="http://60.205.127.180/vendor/dwj/promotion.php" target="_blank">活动通道</a></li>
 				</ul>
 			</div>
@@ -225,7 +179,7 @@ function fruitFunctionPop() {
 		</div>
 		<!--close slideshow-->
 		
-		<div class="ourwork" style="height: 290px">
+		<div class="ourwork" style="height: 250px">
 			<h4>VR 全面开火</h4>
 			<h3>单次游戏: 30人民币</h3>
 			<form method="post" style="vertical-align: middle; text-align: center">
@@ -234,16 +188,16 @@ function fruitFunctionPop() {
 				<img alt="Photo landscape" src="http://60.205.127.180/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid002);?>" /> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<img alt="Photo landscape" src="http://60.205.127.180/php/vendor/dwj/images/fire_dm.png" width="149" />
 			</form>
-			<p></p>
+			<!--<p></p>
 			<div class="popup" onclick="fireFunctionPop()" style="height: 16px">
 				<h3>游戏装备 动感背心: 10人民币 - 请点击这里</h3>
 				<span id="Popup_fire" class="popuptext">
 				<img alt="Photo landscape" src="http://60.205.127.180/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid004);?>" />
-				</span></div>
+				</span></div>-->
 			<!--close more--></div>
 		<!--close ourwork-->
 		
-		<div class="testimonials" style="height: 290px">
+		<div class="testimonials" style="height: 250px">
 			<h4>VR 水果先锋</h4>
 			<h3>单次游戏: 10人民币</h3>
 
@@ -253,13 +207,13 @@ function fruitFunctionPop() {
 				<img alt="Photo landscape" src="http://60.205.127.180/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid001);?>" />  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<img alt="Photo landscape" src="http://60.205.127.180/php/vendor/dwj/images/fruit_dm.png" width="149" />
 			</form>
-			<p></p>
+			<!--<p></p>
 			<div class="popup" onclick="fruitFunctionPop()" style="height: 16px">
 				<h3>双次游戏: 20人民币 - 请点击这里</h3>
 				<span id="Popup_fruit" class="popuptext"> 
 					<img alt="Photo landscape" src="http://60.205.127.180/wxengine/logic/qrcode.php?data=<?php echo urlencode($urlPid003);?>" />
 				</span>
-			</div>
+			</div>-->
 
 			<!--close more--></div>
 		<!--close testimonials-->
